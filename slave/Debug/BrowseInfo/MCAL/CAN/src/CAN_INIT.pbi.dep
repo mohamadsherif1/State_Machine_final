@@ -1,0 +1,26 @@
+D:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.pbi: \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\CAN_INIT.c \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\..\inc\CAN_INIT.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\stdint.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\ycheck.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\yvals.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\DLib_Defaults.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\DLib_Product.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\stdio.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\ysizet.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\stdbool.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_can.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_ints.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_memmap.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\can.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\interrupt.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\pin_map.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\uart.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\utils\uartstdio.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\stdarg.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\..\inc\..\..\..\services\Platform_Types.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\..\inc\..\..\..\can.h

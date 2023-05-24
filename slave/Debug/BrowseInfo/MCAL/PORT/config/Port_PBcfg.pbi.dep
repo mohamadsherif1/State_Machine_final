@@ -1,0 +1,22 @@
+D:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.pbi: \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\Port_PBcfg.c \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\Port.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\Dio.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\Dio_Cfg.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\..\..\..\services\Std_Types.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\..\..\..\services\Platform_Types.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\stdbool.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\stdint.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\ycheck.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\yvals.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\DLib_Defaults.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h \
+  D:\clean\ new\ prorgrams\arm\arm\inc\c\DLib_Product.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\..\..\..\services\Compiler.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\Dio_Regs.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\DIO\inc\..\..\..\services\Common_macros.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\Port_REG.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\..\services\Std_Types.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\..\services\Platform_Types.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\..\..\..\services\Common_macros.h \
+  D:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\..\inc\Port_Cfg.h

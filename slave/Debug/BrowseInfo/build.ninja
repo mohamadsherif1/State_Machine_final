@@ -1,0 +1,183 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\clean$ new$ prorgrams\arm\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"D$:\clean$ new$ prorgrams\arm\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\clean$ new$ prorgrams\arm\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"D$:\clean$ new$ prorgrams\arm\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = D$:\clean$ new$ prorgrams\arm\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"D$:\clean$ new$ prorgrams\arm\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = D$:\clean$ new$ prorgrams\arm\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"D$:\clean$ new$ prorgrams\arm\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\APP\src\APP.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\APP\src\APP.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\APPAL\APP\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\OS\config\OS_Cfg.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\OS\config\OS_Cfg.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\APPAL\OS\config --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\OS\src\OS.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\OS\src\OS.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\APPAL\OS\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\HAL\BUTTON\src\Button.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\HAL\BUTTON\src\Button.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\HAL\BUTTON\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\HAL\LED\src\LED.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\HAL\LED\src\LED.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\HAL\LED\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\CAN_INIT.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\CAN_INIT.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\MCAL\CAN\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\DIO\config\Dio_Lcfg.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\DIO\config\Dio_Lcfg.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\MCAL\DIO\config --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\DIO\src\Dio.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\DIO\src\Dio.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\MCAL\DIO\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\Port_PBcfg.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\Port_PBcfg.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\MCAL\PORT\config --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\src\Port.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\src\Port.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\MCAL\PORT\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\SYSTICK_TIMER\src\systick.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\SYSTICK_TIMER\src\systick.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\MCAL\SYSTICK_TIMER\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\can.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\can.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\main.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\main.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\MCTA\EMBEDDED\final_autosar\slave\startup_ewarm.c -xcl_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.xcl -macro_file D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.tmp -icc_path "D$:\clean$ new$ prorgrams\arm\arm\bin\iccarm.exe"
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\startup_ewarm.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\clean$ new$ prorgrams\arm\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -I C$:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ -Ol --predef_macros D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.tmp
+  rspfile_name = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\APP\src\APP.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\OS\config\OS_Cfg.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\APPAL\OS\src\OS.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\HAL\BUTTON\src\Button.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\HAL\LED\src\LED.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\CAN\src\CAN_INIT.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\DIO\config\Dio_Lcfg.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\DIO\src\Dio.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\config\Port_PBcfg.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\PORT\src\Port.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\MCAL\SYSTICK_TIMER\src\systick.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\can.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\main.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.xcl |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\startup_ewarm.c
+  flags = -out=D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.pbi -f D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.xcl
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE.pbw : MAKEBROWSE D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE.pbd
+  flags = D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE.pbd -output D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE.pbw
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part0.pbi : PDBLINK D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.pbi |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.pbi
+  flags = -M D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part0.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\APP\src\APP.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\config\OS_Cfg.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\APPAL\OS\src\OS.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\BUTTON\src\Button.pbi
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part1.pbi : PDBLINK D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.pbi |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.pbi
+  flags = -M D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part1.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\HAL\LED\src\LED.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\CAN\src\CAN_INIT.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\config\Dio_Lcfg.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\DIO\src\Dio.pbi
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part2.pbi : PDBLINK D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.pbi |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.pbi
+  flags = -M D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part2.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\config\Port_PBcfg.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\PORT\src\Port.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\MCAL\SYSTICK_TIMER\src\systick.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\can.pbi
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part3.pbi : PDBLINK D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.pbi |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.pbi
+  flags = -M D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part3.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\main.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\startup_ewarm.pbi
+
+build D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE.pbd : PDBLINK D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part0.pbi |  $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part1.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part2.pbi $
+D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part3.pbi
+  flags = -M D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE.pbd D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part0.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part1.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part2.pbi D$:\MCTA\EMBEDDED\final_autosar\slave\Debug\BrowseInfo\DIO_WORKSPACE_part3.pbi
+

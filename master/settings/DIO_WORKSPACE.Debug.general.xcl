@@ -1,0 +1,15 @@
+"D:\clean new prorgrams\arm\arm\bin\armPROC.dll" 
+
+"D:\clean new prorgrams\arm\arm\bin\armLMIFTDI.dll" 
+
+"D:\MCTA\EMBEDDED\final_autosar\master\Debug\Exe\DIO_WORKSPACE.out" 
+
+--plugin="D:\clean new prorgrams\arm\arm\bin\armbat.dll" 
+
+--device_macro="D:\clean new prorgrams\arm\arm\config\debugger\TexasInstruments\TM4C123.dmac" 
+
+--flash_loader="D:\clean new prorgrams\arm\arm\config\flashloader\TexasInstruments\FlashTC4_H6_o.board" 
+
+
+
+
